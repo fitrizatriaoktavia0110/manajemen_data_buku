@@ -12,7 +12,8 @@ class PenerbitController extends Controller
      */
     public function index()
     {
-        //
+        $allPenerbit = Penerbit::all();
+        return view('penerbit.index', compact('allPenerbit'));
     }
 
     /**
@@ -20,7 +21,7 @@ class PenerbitController extends Controller
      */
     public function create()
     {
-        //
+        return view('penerbit.create');
     }
 
     /**
@@ -28,7 +29,15 @@ class PenerbitController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // buat validasi data
+        $validatedData = $request->validate([
+            'nama_penerbit' => 'required|string|max:100',
+        ]);
+
+        // simpan data ke database
+        Penerbit::create($validatedData);
+
+        return redirect()->route('penerbit.index')->with('success', 'Penerbit berhasil ditambahkan.');
     }
 
     /**
@@ -36,7 +45,7 @@ class PenerbitController extends Controller
      */
     public function show(Penerbit $penerbit)
     {
-        //
+        return view('penerbit.show', compact('penerbit'));
     }
 
     /**
@@ -44,7 +53,7 @@ class PenerbitController extends Controller
      */
     public function edit(Penerbit $penerbit)
     {
-        //
+        return view('penerbit.edit', compact('penerbit'));
     }
 
     /**
@@ -52,7 +61,15 @@ class PenerbitController extends Controller
      */
     public function update(Request $request, Penerbit $penerbit)
     {
-        //
+        // buat validasi data
+        $validatedData = $request->validate([
+            'nama_penerbit' => 'required|string|max:100',
+        ]);
+
+        // update data di database
+        $penerbit->update($validatedData);
+
+        return redirect()->route('penerbit.index')->with('success', 'Penerbit berhasil diperbarui.');
     }
 
     /**
@@ -60,6 +77,9 @@ class PenerbitController extends Controller
      */
     public function destroy(Penerbit $penerbit)
     {
-        //
+        // hapus data dari database
+        $penerbit->delete();
+
+        return redirect()->route('penerbit.index')->with('success', 'Penerbit berhasil dihapus.');
     }
 }

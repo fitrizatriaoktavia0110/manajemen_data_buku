@@ -11,8 +11,8 @@
         <h1>Manajemen Data Buku</h1>
         <div class="nav">
             <ul>
-                <li><a href="/kategori.index">Kategori</a></li>
-                <li><a href="/penerbit.index">Penerbit</a></li>
-                <li><a href="/buku.index">Buku</a></li>
+                <li><a href="/kategori">Kategori</a></li>
+                <li><a href="/penerbit">Penerbit</a></li>
+                <li><a href="/buku">Buku</a></li>
             </ul>
         </div>
