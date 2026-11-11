@@ -4,7 +4,7 @@
             @csrf
             <div class="form-group">
                 <label for="nama_kategori">Nama Kategori:</label>
-                <input type="text" name="nama_kategori" id="nama_kategori" placeholder="Masukkan nama kategori" required>
+                <input type="text" name="nama_kategori" id="" placeholder="Masukkan nama kategori" required>
             </div>
             <button type="submit" class="tombol">Simpan</button>
         </form>
