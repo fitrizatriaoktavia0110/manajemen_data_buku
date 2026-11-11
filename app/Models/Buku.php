@@ -10,6 +10,8 @@ use App\Models\Penerbit;
 class Buku extends Model
 {
     //
+    protected $guarded = [];
+    
        public function kategori(): BelongsTo
     {
         return $this->belongsTo(Kategori::class);
