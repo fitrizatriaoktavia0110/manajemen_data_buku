@@ -12,7 +12,8 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        //
+        $allKategori = Kategori::all();
+        return view('kategori.index', compact('allKategori'));
     }
 
     /**
@@ -20,7 +21,7 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        //
+        return view('kategori.create');
     }
 
     /**
@@ -28,7 +29,15 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // buat validasi data
+        $validatedData = $request->validate([
+            'nama_kategori' => 'required|string|max:100',
+        ]);
+
+        // simpan data ke database
+        Kategori::create($validatedData);
+
+        return redirect()->route('kategori.index')->with('success', 'Kategori berhasil ditambahkan.');
     }
 
     /**
@@ -36,7 +45,7 @@ class KategoriController extends Controller
      */
     public function show(Kategori $kategori)
     {
-        //
+        return view('kategori.show', compact('kategori'));
     }
 
     /**
@@ -44,7 +53,7 @@ class KategoriController extends Controller
      */
     public function edit(Kategori $kategori)
     {
-        //
+        return view('kategori.edit', compact('kategori'));
     }
 
     /**
@@ -52,7 +61,15 @@ class KategoriController extends Controller
      */
     public function update(Request $request, Kategori $kategori)
     {
-        //
+        // buat validasi data
+        $validatedData = $request->validate([
+            'nama_kategori' => 'required|string|max:100',
+        ]);
+
+        // update data di database
+        $kategori->update($validatedData);
+
+        return redirect()->route('kategori.index')->with('success', 'Kategori berhasil diperbarui.');
     }
 
     /**
@@ -60,6 +77,9 @@ class KategoriController extends Controller
      */
     public function destroy(Kategori $kategori)
     {
-        //
+        // hapus data dari database
+        $kategori->delete();
+
+        return redirect()->route('kategori.index')->with('success', 'Kategori berhasil dihapus.');
     }
 }

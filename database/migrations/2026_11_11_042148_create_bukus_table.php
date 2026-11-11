@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('bukus', function (Blueprint $table) {
             $table->id();
+            $table->string('judul', 255);
+            $table->string('pengarang', 100);
+            $table->string('tahun_terbit');
+            $table->foreignId('kategori_id')->constrained()->onUpdate('cascade')->onDelete('restrict');
+            $table->foreignId('penerbit_id')->constrained()->onUpdate('cascade')->onDelete('restrict');
             $table->timestamps();
         });
     }
