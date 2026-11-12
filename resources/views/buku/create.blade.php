@@ -21,6 +21,7 @@
                         <option value="{{ $p->id }}">{{ $p->nama_penerbit }}</option>
                     @endforeach
                 </select>
+            </div>
             <div class="form-group">
                 <label for="">Kategori:</label>
                 <select name="kategori_id" id="" required>

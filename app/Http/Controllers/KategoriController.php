@@ -37,7 +37,7 @@ class KategoriController extends Controller
         // simpan data ke database
         Kategori::create($validatedData);
 
-        return redirect()->route('kategori.index')->with('success', 'Kategori berhasil ditambahkan.');
+        return redirect()->route('kategori.index');
     }
 
     /**
@@ -69,7 +69,7 @@ class KategoriController extends Controller
         // update data di database
         $kategori->update($validatedData);
 
-        return redirect()->route('kategori.index')->with('success', 'Kategori berhasil diperbarui.');
+        return redirect()->route('kategori.index');
     }
 
     /**
@@ -80,6 +80,6 @@ class KategoriController extends Controller
         // hapus data dari database
         $kategori->delete();
 
-        return redirect()->route('kategori.index')->with('success', 'Kategori berhasil dihapus.');
+        return redirect()->route('kategori.index');
     }
 }

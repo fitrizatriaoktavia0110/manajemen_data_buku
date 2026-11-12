@@ -45,7 +45,7 @@ class BukuController extends Controller
         // simpan data ke database
         Buku::create($validatedData);
 
-        return redirect()->route('buku.index')->with('success', 'Buku berhasil ditambahkan.');
+        return redirect()->route('buku.index');
     }
 
     /**
@@ -83,7 +83,7 @@ class BukuController extends Controller
         // update data di database
         $buku->update($validatedData);
 
-        return redirect()->route('buku.index')->with('success', 'Buku berhasil diperbarui.');
+        return redirect()->route('buku.index');
     }
 
     /**
@@ -94,6 +94,6 @@ class BukuController extends Controller
         // hapus data dari database
         $buku->delete();
 
-        return redirect()->route('buku.index')->with('success', 'Buku berhasil dihapus.');
+        return redirect()->route('buku.index');
     }
 }
