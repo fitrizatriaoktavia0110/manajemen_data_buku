@@ -61,12 +61,12 @@ body, h1, p, table, th, td, input, button {
     font-weight: bold;
     padding: 8px 16px;
     border-radius: 5px;
-    background-color: #34495e;
+    background-color: #4d345e;
     transition: background-color 0.3s;
 }
 
 .nav ul li a:hover {
-    background-color: #555; /* Darker blue for hover */
+    background-color: #bfa4ea; /* Darker blue for hover */
     color: #fff;
 }
 
@@ -102,7 +102,7 @@ h3 {
 
 
   .tombol {
-    background-color: #34495e;
+    background-color: #4e345e;
     color: #fff;
     padding: 6px 6px;
     border: none;
@@ -113,7 +113,7 @@ h3 {
   }
 
   .tombol:hover {
-    background-color: #555;
+    background-color: #8b77dc;
   }
 
   /* Table Styling */
@@ -124,7 +124,7 @@ h3 {
   }
 
   thead {
-    background-color: #34495e;
+    background-color: #51345e;
     color: #fff;
   }
 
